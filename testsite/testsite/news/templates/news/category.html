@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>{{ title }}</title>
+    <title>{{ category.title }}</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,7 +33,7 @@
       <div class="row">
           <div class="col-md-4">
               <div class="list-group">
-                  {% for item in categories %}
+                  {% for item in categories%}
                   <a href="{% url 'category' item.pk %}" class="list-group-item list-group-item-action">{{ item.title }}</a>
                   {% endfor%}
               </div>
@@ -42,7 +42,7 @@
               {% for item in news %}
               <div class="card mb-3">
                   <div class="card-header">
-                      Category: <a href="{% url 'category' item.category.pk %}">{{ item.category }}</a>
+                      Category: {{ item.category }}
                   </div>
                   <div class="card-body">
                       <div class="media">
